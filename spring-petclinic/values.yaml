@@ -19,16 +19,16 @@ service:
   port: 8080
 
 ingress:
-  enabled: false
-  #annotations:
-  #  kubernetes.io/tls-acme: "true"
-  #path: /
-  #hosts:
-  #  - petclinic.example.com
-  #tls:
-  # - secretName: petclinic-tls
-  #   hosts:
-  #     - petclinic.example.com
+  enabled: true
+  annotations:
+   kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+   - pets.jerubaal.com
+  tls:
+  - secretName: jerubaal-tls
+    hosts:
+      - pets.jerubaal.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
